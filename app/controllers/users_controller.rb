@@ -5,6 +5,13 @@ class UsersController < ApplicationController
     @users = User.without_user(current_user)
   end
 
+  def statuses
+    @users = User.without_user(current_user)
+    respond_to do |format| 
+      format.json { render :json => @users.to_json(:only => [:id, :status], :methods => [:full_name]) }
+    end
+  end
+
   def status
     @user = User.find(params[:id])
     respond_to do |format|

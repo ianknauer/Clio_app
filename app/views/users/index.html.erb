@@ -12,14 +12,17 @@
   <% end %>
 </div>
 
-<script type="text/javascript">
-  $("#users-container a.update-link").click(function(){
-    var block = $(this).parent("p");
-    $.get($(this).attr("href"), function(data){
-      $("a.name", block).html(data["full_name"]);
+<script>
+setInterval(function(){
+  $.get('statuses', function(data){
+    for (var obj in data) {
+      url = data[obj].id;
+      var block = $('a[href$="'+url+'"]').parent("p");
       $("span.status", block).removeClass("status-in status-out").
-        addClass("status-"+data["status"]).html(data["status"]);
-    });
-    return false;
+      addClass("status-"+data[obj]["status"]).html(data[obj]["status"]);
+    }
   });
+  return false;
+  console.log('runs');
+}, 5000);
 </script>

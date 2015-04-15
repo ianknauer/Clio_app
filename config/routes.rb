@@ -8,6 +8,8 @@ ClioInOutStub::Application.routes.draw do
     end
   end
 
+  get '/statuses' => "users#statuses"
+
   root :to => "users#index"
 
 end

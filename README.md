@@ -17,6 +17,8 @@ The app must run on:
 The statuses in the UI should update asynchronously, in close to realtime,
 without having to refresh the page or click the update link.
 
+  Polling vs websockets
+
 ### Teams
 
 The app should be able to support teams of users (such as Customer Service
@@ -30,6 +32,13 @@ be present:
   * Delete a team
   * Change a team's name
   * Add & remove people from teams
+
+Rules: 
+
+  unique team name
+  can't delete a team with people on it
+  team-leader?
+
 
 ### Tests
 
