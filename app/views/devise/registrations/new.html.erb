@@ -23,5 +23,9 @@
     <%= f.password_field :password_confirmation, :class => "styled-input" %>
   </label>
 
+  <label class="styled-label"> Team
+    <%= f.collection_select(:team_id, Team.all, :id, :name, :prompt => 'Select') %>
+  </label>
+
   <div><%= f.submit "Sign up" %></div>
 <% end %>

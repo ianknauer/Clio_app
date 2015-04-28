@@ -1,0 +1,10 @@
+<%= render 'form' %>
+
+<%= link_to "Destroy", team_path(@team), :method => :delete %>
+<h4>Members</h4>
+
+<% @users.each do |user| %>
+   <%= user.full_name %>
+  <span>| <%= link_to current_user.id == user.id ? 'Leave' : 'Remove', boot_user_path(user), :method => :boot %></span>
+  <br />
+<% end %>

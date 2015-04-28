@@ -17,7 +17,9 @@ The app must run on:
 The statuses in the UI should update asynchronously, in close to realtime,
 without having to refresh the page or click the update link.
 
-  Polling vs websockets
+  <strong><em>I used polling on the javascript side to check for any updates using a single GET, and then loop through the updates to the ui.<em></strong>
+
+  <strong></em>Possible todo: update only the elements that have different values. This would increase performance because it doesn't have to rewrite all the elements every 5 seconds.</strong> Might be more effective to implement pagination instead.</em>
 
 ### Teams
 

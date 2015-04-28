@@ -1,28 +1,56 @@
+<% if current_user.team_id? %>
+  <h4><%= current_user.team.name %>
+    | <%= link_to("Manage", edit_team_path(current_user.team.id)) %>
+  </h4>
+<% end %>
+
 <p> 
   <span class="name"> My status </span>
   <span class="status status-<%=current_user.status%>"> <%= current_user.status %> </span>
   <%= link_to("Edit", edit_user_path(current_user), :class => "update-link") %>
 </p>
+<% if @team_users %>
+  <%= render "list", users: @team_users %>
+<% end %>
+<hr />
 
-<div id="users-container">
-  <% @users.each do |user| %>
+<% @other_users.each do |user| %>
+  <% if user.available_for_team? %>
     <p> 
-      <%= name_with_status(user.full_name, user.status, user.id) %>
+      <%= name_with_status_and_team(user.full_name, user.status, user.id) %>
     </p>
+  <% else %>
+  <p> 
+    <%= name_with_status(user.full_name, user.status, user.id) %>
+  </p>
   <% end %>
-</div>
+<% end %>
+
 
 <script>
-setInterval(function(){
-  $.get('statuses', function(data){
-    for (var obj in data) {
-      url = data[obj].id;
-      var block = $('a[href$="'+url+'"]').parent("p");
+/*
+  $("#users-container a.update-link").click(function(){
+    var block = $(this).parent("p");
+    $.get($(this).attr("href"), function(data){
+      $("a.name", block).html(data["full_name"]);
       $("span.status", block).removeClass("status-in status-out").
-      addClass("status-"+data[obj]["status"]).html(data[obj]["status"]);
-    }
+        addClass("status-"+data["status"]).html(data["status"]);
+    });
+    return false;
   });
-  return false;
-  console.log('runs');
-}, 5000);
+
+  setInterval(function(){
+    $.get('statuses', function(data){
+      for (var obj in data) {
+        url = data[obj].id;
+        var block = $('a[href$="'+url+'"]').parent("p");
+        $("span.status", block).removeClass("status-in status-out").
+        addClass("status-"+data[obj]["status"]).html(data[obj]["status"]);
+      }
+    });
+    return false;
+    console.log("Hello");
+  }, 5000);
+*/
 </script>
+
