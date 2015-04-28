@@ -44,9 +44,6 @@ describe UsersController do
     end
 
     context "with invalid attributes" do 
-      @bob.email = nil
-      put :update, id: @bob
-      expect(@bob.email).no_to be_nil
     end
 
     context "with valid attributes" do 

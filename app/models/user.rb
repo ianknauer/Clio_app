@@ -55,7 +55,7 @@ class User < ActiveRecord::Base
       "SELECT id, email, status, first_name, team_id, last_name 
       FROM users 
       where id <> ? 
-      AND team_id == ?",
+      AND team_id = ?",
       current_user.id, current_user.team_id]
   end
 

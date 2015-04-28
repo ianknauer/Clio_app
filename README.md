@@ -35,12 +35,9 @@ be present:
   * Change a team's name
   * Add & remove people from teams
 
-Rules: 
-
-  unique team name
-  can't delete a team with people on it
-  team-leader?
-
+  <strong><em>
+  You can create a team at any time, you instantly join the team that you've just created. You can only delete the team that you're currently in, which also removes all the other members from the team. You can add people to your team if they're not currently in a team, and you can remove people from only your team.
+  </strong></em> 
 
 ### Tests
 
@@ -60,6 +57,10 @@ This branch contains a migration
 destroy any existing data in those columns. Alter this migration to ensure
 that, if the database was full of data before the migration, all data would
 still be intact afterwards.
+
+  <strong><em>
+  I resolved the deletion by creating a temporary column in the Database and copying the data over to it in the updated type, before deleting the old one.
+  </strong></em>
 
 ## Additional Questions to Answer
 
