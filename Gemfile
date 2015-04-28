@@ -3,13 +3,17 @@ source 'https://rubygems.org'
 ruby '2.1.4'
 
 gem 'rails', '3.2.13'
-gem 'sqlite3'
+
+# Bundle edge Rails instead:
+# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+gem 'mysql2'
 gem 'devise'
 
 group :assets do
   # Gems required for the asset pipeline
   # If issues installing therubyracer try: "gem uninstall libv8" and uninstalling all versions
-  gem 'libv8', "~> 3.16"
+  gem 'libv8', "~> 3.16.14.7"
   gem 'therubyracer', '0.12.1', :require => 'v8'
   gem 'execjs'
   gem 'sass-rails',   '~> 3.2.3'
@@ -29,3 +33,15 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
 end
+
+# To use ActiveModel has_secure_password
+# gem 'bcrypt-ruby', '~> 3.0.0'
+
+# To use Jbuilder templates for JSON
+# gem 'jbuilder'
+
+# Use unicorn as the app server
+# gem 'unicorn'
+
+# Deploy with Capistrano
+# gem 'capistrano'
