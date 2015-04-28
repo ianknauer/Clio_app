@@ -12,6 +12,10 @@
     <td> <strong><%= @user.full_name %></strong> </td>
   </tr>
   <tr>
+    <td> Team: </td>
+    <td> <strong><%= @user.team_id? ? @user.team.name : 'not a member of a team'%></strong> </td>
+  </tr>
+  <tr>
     <td colspan="2"> <%= link_to "Web Site", @user.web_site %> </td>
   </tr>
 </table>

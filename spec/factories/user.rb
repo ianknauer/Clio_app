@@ -6,6 +6,7 @@ FactoryGirl.define do
     last_name "Person"
     password "testtest"
     password_confirmation "testtest"
+    status "in"
+    team_id nil
   end
-
 end

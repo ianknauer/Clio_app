@@ -12,4 +12,3 @@ test:
   database: clio_project_test
   host: localhost
   username: root
-  

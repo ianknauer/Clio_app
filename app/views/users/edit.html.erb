@@ -14,7 +14,15 @@
   <label class="styled-label"> Web Site
     <%= f.text_field :web_site, :class => "styled-input" %>    
   </label>
+  <label class="styled-label"> Team
+      <%= f.collection_select(:team_id,
+        Team.all,
+        :id,
+        :name,
+        :include_blank => 'No Team'
+        )%>
+  </label>
 
-  <div><%= f.submit "Save" %></div>
+  <%= f.submit "Save" %>
 
 <% end %>

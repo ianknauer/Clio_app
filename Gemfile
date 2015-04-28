@@ -8,24 +8,16 @@ gem 'rails', '3.2.13'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'mysql2'
-
 gem 'devise'
 
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   # Gems required for the asset pipeline
   # If issues installing therubyracer try: "gem uninstall libv8" and uninstalling all versions
   gem 'libv8', "~> 3.16.14.7"
   gem 'therubyracer', '0.12.1', :require => 'v8'
   gem 'execjs'
-
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -36,6 +28,10 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'simplecov'
+  gem 'json_spec'
+  gem 'fabrication'
+  gem 'database_cleaner'
+  gem 'shoulda-matchers'
 end
 
 # To use ActiveModel has_secure_password
@@ -49,6 +45,3 @@ end
 
 # Deploy with Capistrano
 # gem 'capistrano'
-
-
-

@@ -1,0 +1,6 @@
+<%= form_for @team do |f| %>
+  <label class="styled-label"> Name:
+    <%= f.text_field :name %>
+  </label>
+  <%= f.submit(@team.new_record? ? 'Create Team' : 'Update Team Name') %>
+<% end %>

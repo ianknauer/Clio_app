@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe User do
 
+  it { should belong_to(:team) }
+
   let(:user) { create(:user) }
 
   describe "#status=" do
@@ -22,7 +24,18 @@ describe User do
         expect(user.send(:read_attribute, :status)).to be_nil
       end
     end
-
   end
 
+  describe "available_for_team?" do
+    it "should be true when team id is nil" do 
+      expect(user.available_for_team?).to be_true
+    end
+
+    it "should be false when assigned to a team" do 
+      team = Fabricate(:team)
+      user.team = team
+      user.save
+      expect(user.available_for_team?).to be_false
+    end
+  end
 end
