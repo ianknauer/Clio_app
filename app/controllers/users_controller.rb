@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_filter :find_user, only: [:status, :boot, :add, :show, :edit, :update]
 
   def index
-    if current_user.team_id == nil
+    if current_user.team_id.nil?
       @other_users = User.without_user(current_user)
     else
       @team_users = User.team_members(current_user)
@@ -35,12 +35,8 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user.valid?
-      @user.update_attributes(params[:user])
-      redirect_to root_path
-    else
-      render :edit
-    end
+    @user.update_attributes(params[:user])
+    redirect_to root_path
   end
 
   private

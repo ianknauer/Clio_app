@@ -46,6 +46,10 @@ produce a reasonable test coverage report. (Use `COVERAGE=true bundle exec
 rspec` to generate the coverage report; the report is located at
 `coverage/index.html`.)
 
+  <strong><em>
+    I have 85% testing coverage on the app. I didn't test private functions (i'm assuming they're working because the code that relies on them works), or the code added from the migraion for ip addresses.
+  </strong></em>
+
 ### Migration for IP addresses
 
 There is a branch in this project (`integer-ips-for-users`) which contains

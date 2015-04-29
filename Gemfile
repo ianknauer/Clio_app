@@ -7,7 +7,6 @@ gem 'rails', '3.2.13'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
 gem 'devise'
 
 group :assets do
@@ -25,13 +24,14 @@ gem 'jquery-rails'
 
 group :development, :test do
   gem 'faker'
-  gem 'rspec-rails'
+  gem 'rspec-rails', '2.13.1'
   gem 'factory_girl'
   gem 'simplecov'
   gem 'json_spec'
   gem 'fabrication'
   gem 'database_cleaner'
   gem 'shoulda-matchers'
+  gem 'mysql2'
 end
 
 # To use ActiveModel has_secure_password

@@ -11,6 +11,7 @@ class TeamsController < ApplicationController
       current_user.save
       redirect_to root_path
     else
+      flash[:error] = "Please include a team name"
       render :new
     end
   end

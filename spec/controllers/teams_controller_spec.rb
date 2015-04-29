@@ -1,6 +1,7 @@
 require 'spec_helper'
 
 describe TeamsController do 
+  include Devise::TestHelpers
 
   let(:user) { create(:user) }
 
@@ -57,7 +58,12 @@ describe TeamsController do
 
       it "redirects to new" do
         post :create, team: Fabricate.attributes_for(:team, name: "")
-        expect :new
+        expect(response).to render_template("new")
+      end
+
+      it "gives error message" do 
+        post :create, team: Fabricate.attributes_for(:team, name: "")
+        expect(flash[:error]).to eq("Please include a team name")
       end
     end
   end
