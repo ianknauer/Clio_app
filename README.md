@@ -35,9 +35,10 @@ be present:
   * Change a team's name
   * Add & remove people from teams
 
-  <strong><em>
-  You can create a team at any time, you instantly join the team that you've just created. You can only delete the team that you're currently in, which also removes all the other members from the team. You can add people to your team if they're not currently in a team, and you can remove people from only your team.
-  </strong></em> 
+
+<strong><em>
+You can create a team at any time, you instantly join the team that you've just created. You can only delete the team that you're currently in, which also removes all the other members from the team. You can add people to your team if they're not currently in a team, and you can remove people from only your team.
+</strong></em> 
 
 ### Tests
 
@@ -47,7 +48,7 @@ rspec` to generate the coverage report; the report is located at
 `coverage/index.html`.)
 
   <strong><em>
-    I have 85% testing coverage on the app. I didn't test private functions (i'm assuming they're working because the code that relies on them works), or the code added from the migraion for ip addresses.
+    I have 85% testing coverage on the app. I didn't test private functions (i'm assuming they're working because the code that relies on them works), or the code added from the migration for ip addresses.
   </strong></em>
 
 ### Migration for IP addresses
@@ -78,3 +79,7 @@ to storing the IP addresses as strings?
 mention security vulnerabilities within external gems.) List any security
 issues you found, and how to fix them. Also list any potential security
 issues that you investigated which you believe the site to be free of.
+
+<strong><em>
+I've put the answers to the questions in the file questions.txt in the root of the directory.
+</em></strong>
