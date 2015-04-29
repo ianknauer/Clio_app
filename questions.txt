@@ -1,0 +1,17 @@
+Question 1:
+
+The benefit to storing the IP as an integer is that the comparison is generally quicker to process. One major downside to storing this as an INT is that it isn't futureproof for IPv6 addresses.
+
+Question 2:
+
+The ability for team members to add/remove each other and delete the team should probably be re-thought. Ideally there would be an admin for each of the teams who would be the only person able to add/remove people from their teams, and who could pass this admin ability over to another team mate.
+
+Having the entire application behind Devise's authenticate_user! stops anyone from externally querying any of the data, however there's no limit on who can sign up. Limiting the emails to be meet certain requirements (in this case maybe a domain because it's a work product) that also required approval would keep everything safer.
+
+Something that is being implemented on more and more sites is 2 factor authentication via text, which could be used to make the login process more secure.
+
+The passwords are encrypted correctly through the bcrypt gem, so even if the datbase becomes compromised the login info should still be safe. 
+
+
+
+
